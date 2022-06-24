@@ -1,1 +1,5 @@
-// import Navigation from './Navigation';
+import Navigation from '../Navigation';
+
+export default function AppBar() {
+  return <Navigation />;
+}
