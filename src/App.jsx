@@ -1,61 +1,42 @@
-import {Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 // import AppBar from './AppBar';
-import Container from './components/Container';
-// import Cast from './Pages/Cast';
+// import Container from './components/Container';
+import Cast from './pages/Cast';
 import Home from './pages/Home';
-// import MovieDetails from './Pages/MovieDetails';
+import MovieDetails from './pages/MovieDetails';
 import Movies from './pages/Movies';
-// import Reviews from './Pages/Reviews';
+import Reviews from './pages/Reviews';
 // import NotFoundView from './Pages/NotFoundView';
-// import Navigation from './Navigation';
-import AppBar from './components/AppBar';
+import Navigation from './components/Navigation';
+// import AppBar from './components/AppBar';
+// import { API } from './services/API.js'
+
+// console.log(API);
 
 export const App = () => {
   return (
-    <Container>
-      <AppBar/>
-      {/* <Navigation /> */}
+    // <Container>
+    <>
+      <Navigation />
       <Routes>
-      {/* <Switch> */}
-      <Route path="/" exact>
-        <Home />
-      </Route>
-
-      <Route path="/movies">
-        <Movies />
-      </Route>
-{/* 
-      <Route path="/movies/:movieId">
-        <MovieDetails />
-      </Route>
-
-      <Route path="/movies/:movieId/cast">
-        <Cast />
-      </Route>
-
-      <Route path="/movies/:movieId/reviews">
-        <Reviews />
-      </Route> */}
-
-      {/* <Route>
-          <NotFoundView />
-        </Route> */}
-      {/* </Switch> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
       </Routes>
-    </Container>
+    </>
+    // </Container>
   );
 };
-
 
 // const API = 'b610c698525bd18a195a4333e81be16d'
 // const BASE_URL = `https://api.themoviedb.org/3/movie/76341?api_key=${API}`
 
-
-
 // export function fetchTrending() {
 //     return `${BASE_URL}/trending/get-trending`
 // }
-
 
 // console.log(fetchTrending());
 
