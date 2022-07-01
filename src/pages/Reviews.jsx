@@ -1,7 +1,7 @@
 // import { useParams } from 'react-router-dom';
 
-// export default function Reviews() {
-//   const { reviews } = useParams();
+export default function Reviews() {
 
-//   return <div>{reviews}</div>;
-// }
+
+  return <div>Reviews</div>;
+}

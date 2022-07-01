@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import s from './Navigation.module.css';
 
 export default function Navigation() {
@@ -10,6 +10,7 @@ export default function Navigation() {
       <NavLink to="/movies" className={s.nav_item}>
         Movies
       </NavLink>
+      <Outlet />
     </nav>
   );
 }
