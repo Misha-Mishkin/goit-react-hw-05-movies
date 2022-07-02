@@ -27,8 +27,8 @@ export async function fetchMovieCredits(movie_id) {
   );
 }
 
-export async function fetchMovieReviews() {
+export async function fetchMovieReviews(movie_id) {
   return await axios(
-    `${BASE_URL}/movie/{movie_id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+    `${BASE_URL}/movie/${movie_id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
   );
 }

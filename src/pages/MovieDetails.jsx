@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { fetchMovieDetails } from '../services/API';
-import MoviePublic from 'components/MoviePublic';
+import MoviePublic from 'components/MovieRender';
 import Cast from './Cast';
 import Reviews from './Reviews';
 
@@ -23,16 +23,13 @@ export default function MovieDetails() {
       <h3>Additional information</h3>
       <ul>
         <li>
-          <Link to="cast">
-            <Cast />
-          </Link>
+          <Link to="cast">Cast</Link>
         </li>
         <li>
-          <Link to="reviews">
-            <Reviews />
-          </Link>
+          <Link to="reviews">Reviews</Link>
         </li>
       </ul>
+      <hr />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import s from './MoviePublic.module.css';
+import s from './MovieRender.module.css';
 
 export default function MoviePublic({ item }) {
   return (

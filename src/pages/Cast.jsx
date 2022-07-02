@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchMovieCredits } from '../services/API';
 import { useParams } from 'react-router-dom';
+import CastRender from 'components/CastRender';
 
 export default function Cast() {
   const { movieId } = useParams();
@@ -12,22 +13,5 @@ export default function Cast() {
     });
   }, [movieId]);
 
-  return (
-    <>
-      {cast &&
-        cast.map(item => {
-          return (
-            <li key={item.id}>
-              <img
-                alt={item.original_name}
-                src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
-                width="100px"
-              ></img>
-              <p>{item.name}</p>
-              <p>{item.character}</p>
-            </li>
-          );
-        })}
-    </>
-  );
+  return <>{cast && <CastRender cast={cast} />}</>;
 }
