@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { fetchMovieDetails } from '../services/API';
 import MoviePublic from 'components/MovieRender';
-import Cast from './Cast';
-import Reviews from './Reviews';
+// import Cast from './Cast';
+// import Reviews from './Reviews';
 
 export default function MovieDetails() {
   const { movieId } = useParams();
