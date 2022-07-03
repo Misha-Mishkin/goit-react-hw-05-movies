@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/922.0f944e3b.chunk.css","mappings":"AAAA,8BACI,YAAa,CACb,cACJ,CAEA,6BACI,WACJ","sources":["components/CastRender/CastRender.module.css"],"sourcesContent":[".cast_items {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.cast_item {\n    width: 200px;\n}\n\n"],"names":[],"sourceRoot":""}
