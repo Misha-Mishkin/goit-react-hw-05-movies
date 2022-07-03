@@ -9,9 +9,9 @@ export async function fetchMoviesTrending() {
   );
 }
 
-export async function fetchSearchMovies() {
+export async function fetchSearchMovies(movieName) {
   return await axios(
-    `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`
+    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${movieName}&page=1`
   );
 }
 

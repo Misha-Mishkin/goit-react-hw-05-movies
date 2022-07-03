@@ -10,7 +10,7 @@ export default function Navigation() {
       <NavLink to="/movies" className={s.nav_item}>
         Movies
       </NavLink>
-      <hr/>
+      <hr />
       <Outlet />
     </nav>
   );

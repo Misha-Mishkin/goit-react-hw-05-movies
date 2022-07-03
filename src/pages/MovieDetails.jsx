@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useState, useEffect, Suspense } from 'react';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from '../services/API';
+import Movies from './Movies';
 import MoviePublic from 'components/MovieRender';
+import Loader from 'components/Loader';
 
 export default function MovieDetails() {
   const { movieId } = useParams();
   const [item, setItem] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     fetchMovieDetails(movieId).then(res => {
@@ -13,22 +16,33 @@ export default function MovieDetails() {
     });
   }, [movieId]);
 
+  const path = location?.state?.from ?? '/';
+
   return (
     <>
-      <Link to="/"> 👈 Go back</Link>
+      <Link to={path}>
+        👈 Go back
+        <Movies />
+      </Link>
       {item && <MoviePublic item={item} />}
       <hr />
       <h3>Additional information</h3>
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" state={{ from: path }}>
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews" state={{ from: path }}>
+            Reviews
+          </Link>
         </li>
       </ul>
-      <hr/>
-      <Outlet />
+      <hr />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 }
