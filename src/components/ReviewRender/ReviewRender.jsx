@@ -3,7 +3,7 @@ export default function ReviewRender({ reviews }) {
     <ul>
       {reviews.map(review => (
         <li key={review.id}>
-          <p>{review.author}</p>
+          <h3>{review.author}</h3>
           <p>{review.content}</p>
         </li>
       ))}

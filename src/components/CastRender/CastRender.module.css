@@ -1,0 +1,9 @@
+.cast_items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cast_item {
+    width: 200px;
+}
+
