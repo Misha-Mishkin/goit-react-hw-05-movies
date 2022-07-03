@@ -3,12 +3,15 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchSearchMovies } from '../services/API';
 import SearhMovieRender from 'components/SearhMovieRender';
 
+const input = {
+  paddingLeft: 20,  
+};
+
 export default function Movies() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [movieList, setMovieList] = useState(null);
 
-  // const location = useLocation();
   const query = searchParams.get('query');
 
   useEffect(() => {
@@ -39,14 +42,11 @@ export default function Movies() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form onSubmit={handleSubmit} autoComplete="off" style={input}>
         <input type="text" name="searchQuery" onChange={handleChange}></input>
         <button type="submit">Search</button>
       </form>
-      <div>
-        {movieList && <SearhMovieRender/>
-          }
-      </div>
+      <div>{movieList && <SearhMovieRender movieList={movieList} />}</div>
     </div>
   );
 }

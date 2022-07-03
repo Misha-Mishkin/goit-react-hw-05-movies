@@ -5,15 +5,9 @@
 
 .img_container {
   margin-right: 40px;
+  padding-left: 20px;
 }
 
 .content_container {
   width: 1000px;
 }
-
-/* .genres {
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-
-} */

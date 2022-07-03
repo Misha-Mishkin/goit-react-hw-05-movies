@@ -16,11 +16,9 @@ export default function MoviePublic({ item }) {
         <h3>Overview</h3>
         <p>{item.overview}</p>
         <h3>Genres</h3>
-        <p>
-          {item.genres.map(item => {
-            return `${item.name}`;
-          })}
-        </p>
+        {item.genres.map(item => {
+          return `${item.name} `;
+        })}
       </div>
     </div>
   );
