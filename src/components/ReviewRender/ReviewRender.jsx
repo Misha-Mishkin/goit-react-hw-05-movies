@@ -1,4 +1,6 @@
 import s from './ReviewRender.module.css';
+import PropTypes from 'prop-types';
+
 
 export default function ReviewRender({ reviews }) {
   return reviews.length > 0 ? (
@@ -15,4 +17,14 @@ export default function ReviewRender({ reviews }) {
   ) : (
     <span className={s.text}>We don't have any review for this movie</span>
   );
+}
+
+ReviewRender.propTypes = {
+  reviews: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          author: PropTypes.string.isRequired,
+          content: PropTypes.string.isRequired
+        })
+      )
 }

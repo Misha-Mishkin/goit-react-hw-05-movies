@@ -1,5 +1,6 @@
 import { useLocation, Link } from 'react-router-dom';
-import s from './SearhMovieRender.module.css'
+import PropTypes from 'prop-types';
+import s from './SearhMovieRender.module.css';
 
 export default function SearhMovieRender({ movieList }) {
   const location = useLocation();
@@ -16,3 +17,12 @@ export default function SearhMovieRender({ movieList }) {
     </ul>
   );
 }
+
+SearhMovieRender.propTypes = {
+  movieList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
+};

@@ -6,33 +6,29 @@ import Loader from 'components/Loader';
 
 export default function MovieDetails() {
   const { movieId } = useParams();
-  const [item, setItem] = useState(null);
+  const [movie, setMovie] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
     fetchMovieDetails(movieId).then(res => {
-      setItem(res.data);
+      setMovie(res.data);
     });
   }, [movieId]);
 
   const path = location?.state?.from ?? '/';
 
-  const text = {
-    paddingLeft: 20,
-  };
-
-  const button = {
+  const padding = {
     paddingLeft: 20,
   };
 
   return (
     <>
-      <Link to={path} style={button}>
+      <Link to={path} style={padding}>
         <button>👈 Go back</button>
       </Link>
-      {item && <MoviePublic item={item} />}
+      {movie && <MoviePublic movie={movie} />}
       <hr />
-      <h3 style={text}>Additional information</h3>
+      <h3 style={padding}>Additional information</h3>
       <ul>
         <li>
           <Link to="cast" state={{ from: path }}>
